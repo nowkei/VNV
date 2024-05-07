@@ -1,0 +1,82 @@
+@tailwind base;
+
+@tailwind components;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --zoom-responsive:1;
+  --zoom-mobile-responsive:1;
+  --zoom-not-round-responsive:1;
+
+}
+
+.rounded-zoom-responsive{
+  zoom: var(--zoom-responsive);
+}
+
+.rounded-mobile-zoom-responsive{
+  zoom: var(--zoom-mobile-responsive);
+}
+
+.rounded-both-zoom-responsive{
+  zoom: var(--zoom-not-round-responsive);
+}
+
+html,body {
+  margin:0;
+  padding:0;
+  height:100%;
+  overflow-x: hidden;
+}
+
+.ignore-zoom{
+  zoom: calc((1/var(--zoom-not-round-responsive)));
+}
+
+.mt-\[20vh\]{
+  margin-top: calc(20vh*var(--zoom-not-round-responsive));
+}
+
+.mb-\[20vh\]{
+  margin-bottom: calc(20vh*var(--zoom-not-round-responsive));
+}
+
+.mb-\[300px\]
+{
+  margin-bottom: calc(300px*var(--zoom-not-round-responsive));
+}
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+ 
+  white-space: nowrap;
+  /* position: relative; */
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide div {
+  height: 30px;
+  margin: 0 40px;
+}
