@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 // import ServicesSection from '@/ServiceSection/ServicesSection';
-
 import sanityClient from '../../lib/sanityClient';
 
 export const getServerSideProps = async () => {
@@ -144,8 +143,7 @@ function Services({
   rightColumnData,
   leftColumnData,
   headerBody,
-  headerTitle,
-  // serviceCardsData,
+  headerTitle, // serviceCardsData,
 }: any) {
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({

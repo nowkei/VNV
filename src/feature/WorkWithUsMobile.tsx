@@ -117,12 +117,10 @@ function WorkWithUsMobile({ contactData }: any) {
       <div className="rounded-both-zoom-responsive ml-[246px] flex h-[1331px] w-[1331px] items-center">
         <div className="absolute h-[1331px] w-[1331px] rounded-full bg-white opacity-[14%]"></div>
         <div className="absolute ml-[382px]" ref={ref}>
-          <div className={joinWithUsTxtClasses}>Đồng hành cùng <div className="inline text-orange-1">VNV</div></div>
-          <img
-            alt=""
-            className={circleBgClasses}
-            src="/anhnen2.png"
-          />
+          <div className={joinWithUsTxtClasses}>
+            Đồng hành cùng <div className="inline text-orange-1">VNV</div>
+          </div>
+          <img alt="" className={circleBgClasses} src="/anhnen2.png" />
         </div>
       </div>
       <div

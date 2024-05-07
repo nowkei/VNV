@@ -66,7 +66,7 @@ function WorkWithUsIcon({
         <div
           className={`animate-follow absolute flex h-[118px] w-[118px] items-center justify-center`}
         >
-          <img src={iconUrl} />
+          <img alt="vnv" src={iconUrl} />
         </div>
         <div
           className={`ignore-zoom ml-[20%]  text-white transition-all delay-[2s] duration-[1s] ease-in-out`}
@@ -132,14 +132,13 @@ function WorkWithUs({ contactData }: any) {
   );
   return (
     <div className="trandition-all w-full" ref={ref}>
-      <div className="rounded-both-zoom-responsive -ml-[246px] mb-[300px] flex h-[1331px] w-[1331px] items-center">
+      <div className="rounded-both-zoom-responsive mb-[300px] ml-[-246px] flex h-[1331px] w-[1331px] items-center">
         <div className={circleBackgroundClasses}></div>
         <div className="absolute ml-[382px]">
-          <div className={joinWithUsTxtClasses}>Đồng hành cùng <div className="inline text-orange-1">VNV</div></div>
-          <img
-            className={circleBgClasses}
-            src="/anhnen2.png"
-          />
+          <div className={joinWithUsTxtClasses}>
+            Đồng hành cùng <div className="inline text-orange-1">VNV</div>
+          </div>
+          <img alt="vnv" className={circleBgClasses} src="/anhnen2.png" />
         </div>
         {/* <WorkWithUsIcon
           iconUrl="/Group 2017.png"

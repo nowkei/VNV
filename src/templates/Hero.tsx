@@ -20,14 +20,14 @@ const Hero = ({ homeHeroData }: any) => (
     }}
   >
     <Section yPadding="pt-20 pb-32">
-      <HeroOneButton 
+      <HeroOneButton
         title={homeHeroData?.title}
         subTitle={homeHeroData?.subTitle}
         titleHighlight={homeHeroData?.titleHighlight}
         description=""
         button={
           <Link href="https://5t3m.my/nroc2024/">
-            <Button xl >Thông tin cuộc thi</Button>
+            <Button xl>Thông tin cuộc thi</Button>
           </Link>
         }
       />

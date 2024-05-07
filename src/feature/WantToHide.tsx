@@ -138,18 +138,14 @@ function WantToHire() {
         }
       `}</style>
       <div>
-        <img
-          className={forkLiftImage}
-          src="/logo.png"
-          alt="VNV"
-        />
+        <img className={forkLiftImage} src="/logo.png" alt="VNV" />
       </div>
       <div>
         <div className="h-full px-[10%]">
           <div className="text-center text-lg">
             <div className={wantToHireClasses}>Liên hệ ngay</div>
             <div className={aForkLift}>
-              với <div className="inline text-orange-1">VNV</div> 
+              với <div className="inline text-orange-1">VNV</div>
             </div>
           </div>
           <form onSubmit={handleSubmit} className={formClasses}>

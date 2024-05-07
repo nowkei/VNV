@@ -57,7 +57,7 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <Link href="/home" className="flex shrink-0 items-center">
                   <img
-                    className="h-16 w-30"
+                    className="w-30 h-16"
                     src="/logo.png"
                     alt="Vì Người Việt"
                   />

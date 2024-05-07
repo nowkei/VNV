@@ -91,7 +91,8 @@ export const getServerSideProps = async () => {
           title: 'VỀ CHÚNG TÔI',
           content1:
             'Vì Người Việt” là công ty đi đầu trong lĩnh vực công nghệ giáo dục tại Việt Nam.',
-          content2: 'Công ty trở thành đơn vị đầu tiên đem giải pháp học tập STEM thông qua Robot và nền tảng học tập kỹ thuật số.',
+          content2:
+            'Công ty trở thành đơn vị đầu tiên đem giải pháp học tập STEM thông qua Robot và nền tảng học tập kỹ thuật số.',
           content3:
             'Đồng hành cùng 60.000 + học sinh trong đó có hơn 10.000 + học sinh tham gia các cuộc thi trong nước và quốc tế và hơn 500 câu lạc bộ STEM và Robothon.',
           content4:

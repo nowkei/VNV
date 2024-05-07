@@ -9,7 +9,7 @@ type IHeroOneButtonProps = {
 };
 
 const HeroOneButton = (props: IHeroOneButtonProps) => (
-  <header className="rounded-zoom-responsive absolute bottom-0  flex h-full flex-col justify-end pb-2 text-center " >
+  <header className="rounded-zoom-responsive absolute bottom-0  flex h-full flex-col justify-end pb-2 text-center ">
     <div className="text-[15px] font-black text-white sm:mb-2 sm:text-sm md:mb-2 md:text-3xl lg:mb-4 lg:text-4xl">
       {props.title}{' '}
       <span className="text-[#f05a24]">{props.titleHighlight}</span>
