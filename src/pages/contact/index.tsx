@@ -4,7 +4,7 @@ import WorkWithUsMobile from '@/feature/WorkWithUsMobile';
 
 import sanityClient from '../../lib/sanityClient';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const contactQuery = `*[_type == "contact"] | order(_createdAt asc)[0...4]{
     title,
     body[]{

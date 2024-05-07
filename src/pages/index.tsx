@@ -2,7 +2,7 @@ import sanityClient from '@/lib/sanityClient';
 
 import Home from './home';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const logoBannerQuery = `*[_type == "logoBannerss"]{
     "imageUrl": image.asset->url
   }`;

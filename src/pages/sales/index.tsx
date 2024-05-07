@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 // import ServicesSection from '@/ServiceSection/ServicesSection';
 import sanityClient from '../../lib/sanityClient';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const headerQuery = `*[_type == "HeaderSales"]{
     title,
     body[]{

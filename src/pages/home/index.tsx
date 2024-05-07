@@ -8,7 +8,7 @@ import { Hero } from '@/templates/Hero';
 import KeepInTouch from '@/templates/KeepInTouch';
 import { VerticalFeatures } from '@/templates/VerticalFeatures';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const logoBannerQuery = `*[_type == "logoBannerss"]{
     "imageUrl": image.asset->url
   }`;
