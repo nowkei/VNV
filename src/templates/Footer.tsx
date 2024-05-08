@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 
         <div className="my-2 flex items-center text-base sm:justify-center">
           <img alt="vnv" className="pr-3" src="icon-footer-3.svg" />
-          <div>0982566688</div>
+          <div>0383053423</div>
         </div>
         <div className="my-2 flex items-center text-base">
           <img alt="vnv" className="pr-3" src="icon-footer-2.svg" />
