@@ -59,7 +59,7 @@ export default function Example() {
                   <img
                     className="w-30 h-16"
                     src="/logo.png"
-                    alt="VNV"
+                    alt="Vì Người Việt"
                   />
                 </Link>
               </div>
