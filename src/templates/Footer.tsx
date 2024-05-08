@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="my-2 flex items-center text-base">
           <img alt="vnv" className="pr-3" src="icon-footer-2.svg" />
-          <div>congnghegiaoducvinguoiviet@gmail.com</div>
+          <div>vinguoiviet@vnvedu.org</div>
         </div>
         <div className="my-2 flex items-center text-base">
           <img alt="vnv" className="pr-3" src="icon-footer-1.svg" />

@@ -26,7 +26,7 @@ const Hero = ({ homeHeroData }: any) => (
         titleHighlight={homeHeroData?.titleHighlight}
         description=""
         button={
-          <Link href="https://5t3m.my/nroc2024/">
+          <Link href="https://cdn2.me-qr.com/pdf/22173796.pdf">
             <Button xl>Thông tin cuộc thi</Button>
           </Link>
         }
