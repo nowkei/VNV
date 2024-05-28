@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { sendContactForm } from '@/lib/api';
-import ServicesSection from '@/ServiceSection/ServicesSection';
 
 import sanityClient from '../../lib/sanityClient';
 
@@ -147,8 +146,7 @@ function Services({
   rightColumnData,
   leftColumnData,
   headerBody,
-  headerTitle,
-  // serviceCardsData,
+  headerTitle, // serviceCardsData,
 }: any) {
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
@@ -362,7 +360,6 @@ function Services({
         </div>
       </div>
     </div>
-    
   );
 }
 
