@@ -53,7 +53,7 @@ const VerticalFeatureRow = ({ homeAboutUsData }: any) => {
         <div className="mt-6 font-black italic text-[#f05a24] sm:mt-2 sm:text-2xl md:mt-2 lg:text-4xl">
           {homeAboutUsData.title}
         </div>
-        <div className="mt-2 text-center text-[white] sm:text-sm lg:text-xl">
+        <div className="mt-2 text-center text-[black] sm:text-sm lg:text-xl">
           <div>{homeAboutUsData.content1}</div>
           <div className="py-4">{homeAboutUsData.content2}</div>
           <div>{homeAboutUsData.content3}</div>

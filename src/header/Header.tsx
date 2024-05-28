@@ -31,7 +31,7 @@ export default function Example() {
         top: 0,
         width: '100%',
         zIndex: 1000,
-        backgroundColor: '#000',
+        backgroundColor: '#bbd8ff',
       }}
     >
       {({ open }) => (
@@ -85,7 +85,7 @@ export default function Example() {
                       <Link key={item.name} href={item.href} passHref>
                         <div
                           className={classNames(
-                            'px-3 py-2 text-sm font-medium relative hover:text-[#f05924] text-white font-bold link-underline',
+                            'px-3 py-2 text-sm font-medium relative hover:text-[#f05924] text-black font-bold link-underline',
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
@@ -129,8 +129,8 @@ export default function Example() {
                   key={item.name}
                   as="a"
                   href={item.href}
-                  className="block border-b border-[white] px-3 py-2 text-base font-medium hover:text-[#f05924]"
-                  style={{ color: 'white' }}
+                  className="block border-b border-[black] px-3 py-2 text-base font-medium hover:text-[#f05924]"
+                  style={{ color: 'black' }}
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}

@@ -3,8 +3,8 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <div
-      className="rounded-zoom-responsive bg-brown-700 p-4 text-white md:h-64 lg:h-64"
-      style={{ backgroundColor: '#000', width: '100%' }}
+      className="rounded-zoom-responsive bg-brown-700 p-4 text-black md:h-64 lg:h-64"
+      style={{ backgroundColor: '#bbd8ff', width: '100%' }}
     >
       <div className="mx-auto mt-8 flex flex-col items-center justify-between md:w-4/5 md:flex-row">
         <div>
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 
         <div className="my-2 flex items-center text-base sm:justify-center">
           <img alt="vnv" className="pr-3" src="icon-footer-3.svg" />
-          <div>0383053423</div>
+          <div>0981694508</div>
         </div>
         <div className="my-2 flex items-center text-base">
           <img alt="vnv" className="pr-3" src="icon-footer-2.svg" />

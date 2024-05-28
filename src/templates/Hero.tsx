@@ -27,7 +27,7 @@ const Hero = ({ homeHeroData }: any) => (
         description=""
         button={
           <Link href="https://cdn2.me-qr.com/pdf/22173796.pdf">
-            <Button xl>Thông tin cuộc thi</Button>
+            <Button xl>Thông tin cuộc thi ROBOTHON 2024</Button>
           </Link>
         }
       />

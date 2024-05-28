@@ -18,19 +18,19 @@ export const getStaticProps = async () => {
     }
   }`;
 
-  const serviceCardQuery = `*[_type == "serviceCard"] | order(_createdAt desc)[0...3]{
-    title,
-    body[]{
-      children[]{
-        text
-      }
-    },
-    image{
-      asset->{
-        url
-      }
-    }
-  }`;
+  // const serviceCardQuery = `*[_type == "serviceCard"] | order(_createdAt desc)[0...3]{
+  //   title,
+  //   body[]{
+  //     children[]{
+  //       text
+  //     }
+  //   },
+  //   image{
+  //     asset->{
+  //       url
+  //     }
+  //   }
+  // }`;
 
   const rightColumnQuery = `*[_type == "rightServicesColumn"] | order(_createdAt asc) {
     title,
@@ -63,19 +63,19 @@ export const getStaticProps = async () => {
   const rightColumnData: any = await sanityClient.fetch(rightColumnQuery);
   const leftColumnData: any = await sanityClient.fetch(leftColumnQuery);
   const headerData = await sanityClient.fetch(headerQuery);
-  const serviceCardsData = await sanityClient.fetch(serviceCardQuery);
+  // const serviceCardsData = await sanityClient.fetch(serviceCardQuery);
 
-  const processedServiceCardsData = serviceCardsData.map((card: any) => ({
-    title: card.title || 'No Title Provided',
-    body: card.body
-      ? card.body
-          .map((block: any) =>
-            block.children.map((child: any) => child.text).join(' '),
-          )
-          .join('\n')
-      : 'No Content Available',
-    imageUrl: card.image?.asset.url || '/pythaverse.png',
-  }));
+  // const processedServiceCardsData = serviceCardsData.map((card: any) => ({
+  //   title: card.title || 'No Title Provided',
+  //   body: card.body
+  //     ? card.body
+  //         .map((block: any) =>
+  //           block.children.map((child: any) => child.text).join(' '),
+  //         )
+  //         .join('\n')
+  //     : 'No Content Available',
+  //   imageUrl: card.image?.asset.url || '/pythaverse.png',
+  // }));
 
   const processedBody =
     headerData.length > 0 && headerData[0].body
@@ -138,7 +138,7 @@ export const getStaticProps = async () => {
       rightColumnData: finalRightColumnData,
       headerTitle: headerData.length > 0 ? headerData[0].title : 'No title',
       headerBody: processedBody,
-      serviceCardsData: processedServiceCardsData,
+      // serviceCardsData: processedServiceCardsData,
     },
   };
 };
@@ -148,7 +148,7 @@ function Services({
   leftColumnData,
   headerBody,
   headerTitle,
-  serviceCardsData,
+  // serviceCardsData,
 }: any) {
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
@@ -253,20 +253,16 @@ function Services({
           display: inline-block;
         }
       `}</style>
-      <div
-        className={`rounded-zoom-responsive fade-up container mx-auto px-6 pb-[10%]`}
-      >
-        <ServicesSection serviceCards={serviceCardsData} />
-      </div>
+
       <div ref={ref} style={fadeUpStyle}>
         <div className="rounded-zoom-responsive  relative  mx-auto w-[95%]   pb-[10%] md:w-4/5  lg:w-4/5">
-          <div className="pt-10 text-center text-2xl font-bold text-[#FFFFFF] md:text-2xl lg:text-5xl">
+          <div className="pt-10 text-center text-2xl font-bold text-[#000] md:text-2xl lg:text-5xl">
             {headerTitle}
           </div>
-          <div className="md:text-md px-8 text-center text-sm  text-[#FFFFFF] lg:text-lg">
+          <div className="md:text-md px-8 text-center text-sm  text-[#000] lg:text-lg">
             {headerBody}
           </div>
-          <div className="md:text-md  mt-[5%] text-sm text-[#FFFFFF]  lg:text-lg">
+          <div className="md:text-md  mt-[5%] text-sm text-[#000]  lg:text-lg">
             <div className="flex flex-col md:flex-col lg:flex lg:flex-row">
               <div className="w-full px-8 lg:w-1/2">
                 {leftColumnData.map((item: any, index: any) => (
@@ -322,7 +318,7 @@ function Services({
                   </div>
                 ))}
                 <form onSubmit={handleSubmit} className={formClasses}>
-                  <div className=" mb-2 mt-6 flex justify-center border-b border-white text-base font-extrabold italic text-white sm:text-lg md:text-base lg:text-lg xl:text-2xl">
+                  <div className=" mb-2 mt-6 flex justify-center border-b border-black text-base font-extrabold italic text-black sm:text-lg md:text-base lg:text-lg xl:text-2xl">
                     Liên hệ với chúng tôi
                   </div>
                   {/* <hr className="w-1/2 mt-2 flex justify-center border-t border-white" /> */}
@@ -366,6 +362,7 @@ function Services({
         </div>
       </div>
     </div>
+    
   );
 }
 

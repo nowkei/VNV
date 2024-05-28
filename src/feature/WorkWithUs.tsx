@@ -69,7 +69,7 @@ function WorkWithUsIcon({
           <img alt="vnv" src={iconUrl} />
         </div>
         <div
-          className={`ignore-zoom ml-[20%]  text-white transition-all delay-[2s] duration-[1s] ease-in-out`}
+          className={`ignore-zoom ml-[20%]  text-black transition-all delay-[2s] duration-[1s] ease-in-out`}
           style={{
             opacity: inView ? 100 : 0,
           }}
@@ -122,7 +122,7 @@ function WorkWithUs({ contactData }: any) {
     'ignore-zoom',
     'text-[3vw]',
     'font-bold',
-    'text-white',
+    'text-black',
     'transition-all',
     'duration-[3s]',
     'ease-in-out',

@@ -14,13 +14,13 @@ interface ServiceCardProps {
 
 const hrefConfigs = [
   {
-    href: '/services',
+    href: 'https://vi.leanbot.space/',
   },
   {
     href: '/services',
   },
   {
-    href: '/services',
+    href: 'https://pythaverse.space/',
   },
 ];
 
@@ -94,7 +94,7 @@ const ServicesSection: React.FC<{ serviceCards: any[] }> = ({
   );
 
   if (!serviceCards || !Array.isArray(serviceCards)) {
-    return <p>No Service Cards Available</p>;
+    return <p></p>;
   }
 
   return (

@@ -59,7 +59,7 @@ export const getStaticProps = async () => {
           // title: 'Hire a',
           // titleHighlight: 'Forklift',
           // subTitle: 'Today',
-          buttonlabel: 'Thông tin cuộc thi',
+          buttonlabel: 'Thông tin cuộc thi ROBOTHON 2024',
           imageUrl: '/home.png',
         };
 
