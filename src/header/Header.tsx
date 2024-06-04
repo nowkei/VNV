@@ -7,7 +7,12 @@ const navigation = [
   { name: 'Thông tin', href: '/services', current: false },
   {
     name: 'Robothon 2024',
-    href: '/sales',
+    href: 'https://www.pythaverse.net/robothon-vn/',
+    current: false,
+  },
+  {
+    name: 'Tin Tức',
+    href: '/news',
     current: false,
   },
   {
