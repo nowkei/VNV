@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+
 import sanityClient from '../../lib/sanityClient';
-import Link from 'next/link';
 
 export const getStaticProps = async () => {
   const headerQuery = `*[_type == "HeaderNews"]{
@@ -132,7 +133,9 @@ export const getStaticProps = async () => {
             block.children.map((child: any) => child.text).join('\n'),
           )
         : [],
-      images: item.images ? item.images.map((image: any) => image.asset.url) : [],
+      images: item.images
+        ? item.images.map((image: any) => image.asset.url)
+        : [],
       url: item.url || '#',
     }));
 
@@ -163,7 +166,7 @@ function Services({
   leftColumnData,
   leftBottomData,
   leftNewsColumnData,
-  themeNewsData
+  themeNewsData,
 }: any) {
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
@@ -230,38 +233,38 @@ function Services({
         }
       `}</style>
       <div ref={ref} style={fadeUpStyle}>
-        <div className="rounded-zoom-responsive relative mx-auto w-[95%] pb-[10%] md:w-5/5 lg:w-5/5">
+        <div className="rounded-zoom-responsive md:w-5/5 lg:w-5/5 relative mx-auto w-[95%] pb-[10%]">
           <div className="pt-10 text-center text-2xl font-bold text-[#000] md:text-2xl lg:text-5xl">
             {themeNewsData.map((item: any, index: any) => (
-                      <div key={index}>
-                        <Link href={item.url} passHref>
-                          <div className="mb-2 font-bold italic">{item.title}</div>
-                          <div>
-                            {item.text.map((paragraph: any, pIndex: any) => (
-                              <div key={pIndex} className="mb-6">
-                                {paragraph}
-                              </div>
-                            ))}
-                          </div>
-                          {item.images && item.images[0] !== 'No images available' && (
-                            <div>
-                              {item.images.map((image: any, imgIndex: any) => (
-                                <img
-                                  className="mb-6"
-                                  key={imgIndex}
-                                  src={image}
-                                  alt={`Image for ${item.title}`}
-                                />
-                              ))}
-                            </div>
-                          )}
-                        </Link>
+              <div key={index}>
+                <Link href={item.url} passHref>
+                  <div className="mb-2 font-bold italic">{item.title}</div>
+                  <div>
+                    {item.text.map((paragraph: any, pIndex: any) => (
+                      <div key={pIndex} className="mb-6">
+                        {paragraph}
                       </div>
                     ))}
+                  </div>
+                  {item.images && item.images[0] !== 'No images available' && (
+                    <div>
+                      {item.images.map((image: any, imgIndex: any) => (
+                        <img
+                          className="mb-6"
+                          key={imgIndex}
+                          src={image}
+                          alt={`Image for ${item.title}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </Link>
+              </div>
+            ))}
           </div>
           <div className="md:text-md mt-[5%] text-sm text-[#000] lg:text-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
-              <div className="lg:col-span-1 border border-green-500 p-4 rounded-lg shadow-md hover-effect">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-6">
+              <div className="hover-effect rounded-lg border border-green-500 p-4 shadow-md lg:col-span-1">
                 {leftNewsColumnData.map((item: any, index: any) => (
                   <div key={index}>
                     <div className="mb-2 font-bold italic">{item.title}</div>
@@ -272,28 +275,31 @@ function Services({
                         </div>
                       ))}
                     </div>
-                    {item.images && item.images[0] !== 'No images available' && (
-                      <div>
-                        {item.images.map((image: any, imgIndex: any) => (
-                          <img
-                            className="mb-6"
-                            key={imgIndex}
-                            src={image}
-                            alt={`Image for ${item.title}`}
-                          />
-                        ))}
-                      </div>
-                    )}
+                    {item.images &&
+                      item.images[0] !== 'No images available' && (
+                        <div>
+                          {item.images.map((image: any, imgIndex: any) => (
+                            <img
+                              className="mb-6"
+                              key={imgIndex}
+                              src={image}
+                              alt={`Image for ${item.title}`}
+                            />
+                          ))}
+                        </div>
+                      )}
                   </div>
                 ))}
               </div>
               <div className="lg:col-span-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="border border-green-500 p-4 rounded-lg shadow-md hover-effect">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                  <div className="hover-effect rounded-lg border border-green-500 p-4 shadow-md">
                     {leftColumnData.map((item: any, index: any) => (
                       <div key={index}>
                         <Link href={item.url} passHref>
-                          <div className="mb-2 font-bold italic">{item.title}</div>
+                          <div className="mb-2 font-bold italic">
+                            {item.title}
+                          </div>
                           <div>
                             {item.text.map((paragraph: any, pIndex: any) => (
                               <div key={pIndex} className="mb-6">
@@ -301,27 +307,32 @@ function Services({
                               </div>
                             ))}
                           </div>
-                          {item.images && item.images[0] !== 'No images available' && (
-                            <div>
-                              {item.images.map((image: any, imgIndex: any) => (
-                                <img
-                                  className="mb-6"
-                                  key={imgIndex}
-                                  src={image}
-                                  alt={`Image for ${item.title}`}
-                                />
-                              ))}
-                            </div>
-                          )}
+                          {item.images &&
+                            item.images[0] !== 'No images available' && (
+                              <div>
+                                {item.images.map(
+                                  (image: any, imgIndex: any) => (
+                                    <img
+                                      className="mb-6"
+                                      key={imgIndex}
+                                      src={image}
+                                      alt={`Image for ${item.title}`}
+                                    />
+                                  ),
+                                )}
+                              </div>
+                            )}
                         </Link>
                       </div>
                     ))}
                   </div>
-                  <div className="border border-green-500 p-4 rounded-lg shadow-md hover-effect">
+                  <div className="hover-effect rounded-lg border border-green-500 p-4 shadow-md">
                     {rightColumnData.map((item: any, index: any) => (
                       <div key={index}>
                         <Link href={item.url} passHref>
-                          <div className="mb-2 font-bold italic">{item.title}</div>
+                          <div className="mb-2 font-bold italic">
+                            {item.title}
+                          </div>
                           <div>
                             {item.text.map((paragraph: any, pIndex: any) => (
                               <div key={pIndex} className="mb-6">
@@ -329,29 +340,34 @@ function Services({
                               </div>
                             ))}
                           </div>
-                          {item.images && item.images[0] !== 'No images available' && (
-                            <div>
-                              {item.images.map((image: any, imgIndex: any) => (
-                                <img
-                                  className="mb-6"
-                                  key={imgIndex}
-                                  src={image}
-                                  alt={`Image for ${item.title}`}
-                                />
-                              ))}
-                            </div>
-                          )}
+                          {item.images &&
+                            item.images[0] !== 'No images available' && (
+                              <div>
+                                {item.images.map(
+                                  (image: any, imgIndex: any) => (
+                                    <img
+                                      className="mb-6"
+                                      key={imgIndex}
+                                      src={image}
+                                      alt={`Image for ${item.title}`}
+                                    />
+                                  ),
+                                )}
+                              </div>
+                            )}
                         </Link>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                  <div className="border border-green-500 p-4 rounded-lg shadow-md hover-effect">
+                <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+                  <div className="hover-effect rounded-lg border border-green-500 p-4 shadow-md">
                     {leftBottomData.map((item: any, index: any) => (
                       <div key={index}>
                         <Link href={item.url} passHref>
-                          <div className="mb-2 font-bold italic">{item.title}</div>
+                          <div className="mb-2 font-bold italic">
+                            {item.title}
+                          </div>
                           <div>
                             {item.text.map((paragraph: any, pIndex: any) => (
                               <div key={pIndex} className="mb-6">
@@ -359,27 +375,32 @@ function Services({
                               </div>
                             ))}
                           </div>
-                          {item.images && item.images[0] !== 'No images available' && (
-                            <div>
-                              {item.images.map((image: any, imgIndex: any) => (
-                                <img
-                                  className="mb-6"
-                                  key={imgIndex}
-                                  src={image}
-                                  alt={`Image for {item.title}`}
-                                />
-                              ))}
-                            </div>
-                          )}
+                          {item.images &&
+                            item.images[0] !== 'No images available' && (
+                              <div>
+                                {item.images.map(
+                                  (image: any, imgIndex: any) => (
+                                    <img
+                                      className="mb-6"
+                                      key={imgIndex}
+                                      src={image}
+                                      alt={`Image for {item.title}`}
+                                    />
+                                  ),
+                                )}
+                              </div>
+                            )}
                         </Link>
                       </div>
                     ))}
                   </div>
-                  <div className="border border-green-500 p-4 rounded-lg shadow-md hover-effect">
+                  <div className="hover-effect rounded-lg border border-green-500 p-4 shadow-md">
                     {rightBottomData.map((item: any, index: any) => (
                       <div key={index}>
                         <Link href={item.url} passHref>
-                          <div className="mb-2 font-bold italic">{item.title}</div>
+                          <div className="mb-2 font-bold italic">
+                            {item.title}
+                          </div>
                           <div>
                             {item.text.map((paragraph: any, pIndex: any) => (
                               <div key={pIndex} className="mb-6">
@@ -387,18 +408,21 @@ function Services({
                               </div>
                             ))}
                           </div>
-                          {item.images && item.images[0] !== 'No images available' && (
-                            <div>
-                              {item.images.map((image: any, imgIndex: any) => (
-                                <img
-                                  className="mb-6"
-                                  key={imgIndex}
-                                  src={image}
-                                  alt={`Image for ${item.title}`}
-                                />
-                              ))}
-                            </div>
-                          )}
+                          {item.images &&
+                            item.images[0] !== 'No images available' && (
+                              <div>
+                                {item.images.map(
+                                  (image: any, imgIndex: any) => (
+                                    <img
+                                      className="mb-6"
+                                      key={imgIndex}
+                                      src={image}
+                                      alt={`Image for ${item.title}`}
+                                    />
+                                  ),
+                                )}
+                              </div>
+                            )}
                         </Link>
                       </div>
                     ))}
