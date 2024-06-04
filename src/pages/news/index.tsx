@@ -163,8 +163,6 @@ function Services({
   leftColumnData,
   leftBottomData,
   leftNewsColumnData,
-  headerBody,
-  headerTitle,
   themeNewsData
 }: any) {
   const [isVisible, setIsVisible] = useState(false);
