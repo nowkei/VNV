@@ -10,8 +10,8 @@ const Button = (props: IButtonProps) => {
     btn: true,
     'btn-base': !props.xl,
     'btn-primary': true,
-    'lg:px-8 lg:py-3 px-2 py-1 md:px-7 md:py-2.5 text-sx font-light text-white sm:text-2lg md:text-3lg lg:text-5lg rounded-full':
-      true,
+    'font-family: Arial, Helvetica, sans-serif': true,
+    'lg:px-48 lg:py-5 px-6 py-2 md:px-14 md:py-4 text-lg font-light text-white sm:text-3xl md:text-4xl lg:text-6xl rounded-full': true,
   });
 
   return (
@@ -22,22 +22,29 @@ const Button = (props: IButtonProps) => {
         {`
           .btn {
             @apply inline-block text-center;
+            font-family: ui-monospace, Helvetica, sans-serif;
+
           }
 
           .btn-base {
             @apply text-sm font-semibold py-2 px-4;
+            font-family: ui-monospace, Helvetica, sans-serif;
+
           }
 
           .btn-xl {
             @apply font-extrabold text-xl py-4 px-6;
+            font-family: ui-monospace, Helvetica, sans-serif;
+
           }
 
           .btn-primary {
             @apply text-white;
-            font-size: 10px;
+            font-size: 40px;
             font-weight: 400;
             background-color: black;
             border: 1px solid white;
+            font-family: ui-monospace;
             font-weight: 900;
           }
 
