@@ -10,8 +10,11 @@ const Button = (props: IButtonProps) => {
     btn: true,
     'btn-base': !props.xl,
     'btn-primary': true,
-    'lg:px-48 lg:py-5 px-6 py-2 md:px-14 md:py-4 text-lg font-light text-white sm:text-3xl md:text-4xl lg:text-6xl rounded-full':
-      true,
+    'px-4 py-2 text-lg font-light text-white rounded-full': true,
+    'sm:px-6 sm:py-3 sm:text-xl': true,
+    'md:px-8 md:py-4 md:text-2xl': true,
+    'lg:px-10 lg:py-5 lg:text-3xl': true,
+    'xl:px-12 xl:py-6 xl:text-4xl': props.xl,
   });
 
   return (
@@ -34,7 +37,7 @@ const Button = (props: IButtonProps) => {
 
           .btn-primary {
             @apply text-white;
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 400;
             background-color: black;
             border: 1px solid white;
